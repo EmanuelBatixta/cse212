@@ -73,7 +73,7 @@ public static class Algorithms {
             start = middle + 1;
             count += 1;
         }
-
+ 
         return count;
     }
 }
