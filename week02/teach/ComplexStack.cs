@@ -23,5 +23,6 @@
     }
 }
 
-//this function recieve a key '"("; "{". "["'
-// the program evaluate the parameter and add this in a 
+// this function recieve a key '"("; "{". "["'
+// the program evaluate the parameter and add this in a stack if is like the upow
+//

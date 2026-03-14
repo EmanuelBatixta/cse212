@@ -11,23 +11,63 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: adding a customer, removing a customer
+        // Expected Result: display the added customer
         Console.WriteLine("Test 1");
+        var service = new CustomerService(5);
+        service.AddNewCustomer();
+        service.ServeCustomer();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: The program try display a name after deleting then
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Try add 2 clients in a queue of 1
+        // Expected Result: Display a message warning this
         Console.WriteLine("Test 2");
+        service = new CustomerService(1);
+        service.AddNewCustomer();
+        service.AddNewCustomer();
 
-        // Defect(s) Found: 
+        // Defect(s) Found: I need change < for <= 
 
         Console.WriteLine("=================");
 
+        // Test 3
+        // Scenario: Try serve a customer in a empty quer
+        // Expected Result: Display a message warning this
+        Console.WriteLine("Test 3");
+        service = new CustomerService(1);
+        service.ServeCustomer();
+        // DEfects: I needed to implement a message
+
+
+        Console.WriteLine("=================");
+
+        // Test 4
+        // Scenario: Insert a queue of count 0
+        // Expected Result: the program should be calculate for  count 10
+        Console.WriteLine("Test 4");
+        service = new CustomerService(0);
+        Console.WriteLine($"queue.cont= {service}");
+        //Problem: None
+
+
+        Console.WriteLine("=================");
+
+        // Test 5
+        // Scenario: Try remove customers in correct order
+        // Expected Result: the program should be remove in correct order
+        Console.WriteLine("Test 4");
+        service = new CustomerService(0);
+        service.AddNewCustomer();
+        service.AddNewCustomer();
+        Console.WriteLine($"queue data {service}");
+        service.ServeCustomer();
+        service.ServeCustomer();
+        Console.WriteLine($"queue data {service}");
+        //Problem: None
         // Add more Test Cases As Needed Below
     }
 
@@ -67,7 +107,7 @@ public class CustomerService {
     /// </summary>
     private void AddNewCustomer() {
         // Verify there is room in the service queue
-        if (_queue.Count > _maxSize) {
+        if (_queue.Count >= _maxSize) {
             Console.WriteLine("Maximum Number of Customers in Queue.");
             return;
         }
@@ -88,9 +128,13 @@ public class CustomerService {
     /// Dequeue the next customer and display the information.
     /// </summary>
     private void ServeCustomer() {
-        _queue.RemoveAt(0);
-        var customer = _queue[0];
-        Console.WriteLine(customer);
+        if (_queue.Count <= 0) {
+            Console.WriteLine("No customers in the queue");
+        } else {
+            var customer = _queue[0];
+            _queue.RemoveAt(0);
+            Console.WriteLine(customer);
+        }
     }
 
     /// <summary>
