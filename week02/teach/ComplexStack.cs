@@ -22,3 +22,6 @@
         return stack.Count == 0;
     }
 }
+
+//this function recieve a key '"("; "{". "["'
+// the program evaluate the parameter and add this in a 

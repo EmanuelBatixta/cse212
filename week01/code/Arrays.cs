@@ -16,7 +16,7 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        //set a new array with the input length
+        // set a new array with the input length
         // create e loop for (To each number untill length i will multiply the number of input)
         // The result will be add in the new array 
         // Return this new array
