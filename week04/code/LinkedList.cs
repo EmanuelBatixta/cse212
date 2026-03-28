@@ -205,11 +205,11 @@ public class LinkedList : IEnumerable<int>
         if (_head == null)
             yield break;
 
-        Node curr = _tail;
+        Node curr = _tail!;
         while (curr is not null)
         {
             yield return curr.Data;
-            curr = curr.Prev;
+            curr = curr.Prev!;
         }
     }
 
