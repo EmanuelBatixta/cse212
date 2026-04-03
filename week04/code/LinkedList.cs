@@ -238,4 +238,3 @@ public static class IntArrayExtensionMethods
         return "<IEnumerable>{" + string.Join(", ", array.Cast<int>()) + "}";
     }
 }
-        
